@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Learn Lhoke</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; font-family: sans-serif; background: #fdfdfd;">
+
+  <!-- Title -->
+  <div style="text-align: center; padding: 20px; background-color: #333; color: white;">
+    <h1 style="margin: 0;">Learn Lhoke</h1>
+  </div>
+
+  <!-- Navbar -->
+  <div style="display: flex; justify-content: center; gap: 20px; background: #eee; padding: 10px; flex-wrap: wrap;">
+    <button onclick="showSection('soundboard')" style="padding: 10px 20px; cursor: pointer;">Bhutia Soundboard</button>
+    <button onclick="showSection('phrases')" style="padding: 10px 20px; cursor: pointer;">Phrases & Idioms</button>
+    <button onclick="showSection('stories')" style="padding: 10px 20px; cursor: pointer;">Audio Stories</button>
+  </div>
+
+  <!-- Section Container -->
+  <div id="section-container" style="text-align: center; padding: 30px;">
+    <div id="soundboard" style="display: none;">
+      <h2>Bhutia Soundboard</h2>
+      <p>Click below to learn the Tibetan Bhutia alphabets with sound support.</p>
+      <a href="{{ url_for('soundboard') }}">
+        <button style="padding: 12px 25px; margin-top: 10px;">Go to Soundboard</button>
+      </a>
+    </div>
+
+    <div id="phrases" style="display: none;">
+      <h2>Phrases & Idioms</h2>
+      <p>This section will teach you useful everyday phrases and idioms in Bhutia.</p>
+      <button disabled style="padding: 12px 25px; margin-top: 10px; background: gray; color: white;">Coming Soon</button>
+    </div>
+
+    <div id="stories" style="display: none;">
+      <h2>Audio Stories</h2>
+      <p>Enjoy traditional Bhutia stories in audio format to improve your listening skills.</p>
+      <button disabled style="padding: 12px 25px; margin-top: 10px; background: gray; color: white;">Coming Soon</button>
+    </div>
+  </div>
+
+  <!-- Script to toggle sections -->
+  <script>
+    function showSection(id) {
+      ['soundboard', 'phrases', 'stories'].forEach(sec => {
+        document.getElementById(sec).style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
